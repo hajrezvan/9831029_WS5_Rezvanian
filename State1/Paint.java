@@ -41,6 +41,17 @@ public class Paint {
     }
 
     public void printAll() {
-
+        for (Rectangle r : rectangle) {
+            r.convertToString();
+            System.out.println();
+        }
+        for (Triangle r : triangle) {
+            r.convertToString();
+            System.out.println();
+        }
+        for (Circle r : circle) {
+            r.convertToString();
+            System.out.println();
+        }
     }
 }
