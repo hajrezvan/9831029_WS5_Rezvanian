@@ -2,8 +2,8 @@ package State2;
 
 import java.util.ArrayList;
 
-public class Rectangle extends Paint {
-    private ArrayList<Integer> sides;
+public class Rectangle extends Polygon {
+
 
     public Rectangle(int side1, int side2, int side3, int side4) {
         sides = new ArrayList<>();

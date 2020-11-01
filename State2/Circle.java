@@ -1,6 +1,6 @@
 package State2;
 
-public class Circle extends Paint {
+public class Circle extends Shape {
     private int radios;
 
     public Circle(int radios) {

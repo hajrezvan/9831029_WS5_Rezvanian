@@ -2,8 +2,7 @@ package State2;
 
 import java.util.ArrayList;
 
-public class Triangle extends Paint {
-    private ArrayList<Integer> sides;
+public class Triangle extends Polygon {
 
     public Triangle(int side1, int side2, int side3) {
         sides = new ArrayList<>();
