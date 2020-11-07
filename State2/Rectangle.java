@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Rectangle extends Polygon {
 
-
     public Rectangle(int side1, int side2, int side3, int side4) {
         sides = new ArrayList<>();
         sides.add(side1);
@@ -13,10 +12,7 @@ public class Rectangle extends Polygon {
         sides.add(side4);
     }
 
-    public ArrayList<Integer> getSides() {
-        return sides;
-    }
-
+    @Override
     public double calculatePerimeter() {
         double perimeter = 0;
         for (int r : sides) {
@@ -25,6 +21,7 @@ public class Rectangle extends Polygon {
         return perimeter;
     }
 
+    @Override
     public double calculateArea() {
         if (!sides.get(0).equals(sides.get(1))) {
             return (sides.get(0) * sides.get(1));
@@ -35,23 +32,20 @@ public class Rectangle extends Polygon {
         }
     }
 
+    @Override
     public void draw() {
         System.out.println("Rectangle\n" +
                 "Its sides: " + sides);
     }
 
-    public boolean equals(String shape, ArrayList<Integer> sides) {
-        if (shape.equals("Rectangle")) {
-            return this.sides == sides;
+    @Override
+    public boolean checkEquals(Object object) {
+        if (object.toString().equals(this.toString())) {
+            if (object instanceof Rectangle) {
+                return this.sides == ((Rectangle) object).getSides();
+            }
         }
         return false;
-    }
-
-    public void convertToString() {
-        System.out.println("Rectangle:\n" +
-                "This sides: " + sides.toString() +
-                "\nThis perimeter: " + calculatePerimeter() +
-                "\nThis Area: " + calculateArea());
     }
 
     public boolean isSquare() {

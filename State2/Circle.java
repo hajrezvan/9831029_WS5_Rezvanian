@@ -11,30 +11,29 @@ public class Circle extends Shape {
         return radios;
     }
 
+    @Override
     public double calculatePerimeter() {
         return (Math.PI * 2 * radios);
     }
 
+    @Override
     public double calculateArea() {
         return (Math.PI * radios * radios);
     }
 
+    @Override
     public void draw() {
         System.out.println("Circle\n" +
                 "Its sides: " + radios);
     }
 
-    public boolean equals(String shape, int radios) {
-        if (shape.equals("Circle")) {
-            return this.radios == radios;
+    @Override
+    public boolean checkEquals(Object object) {
+        if (object.toString().equals(this.toString())) {
+            if (object instanceof Circle) {
+                return this.radios == ((Circle) object).getRadios();
+            }
         }
         return false;
-    }
-
-    public void convertToString() {
-        System.out.println("Circle\n" +
-                "Radios: " + radios +
-                "\nPerimeter: " + calculatePerimeter() +
-                "\nArea: " + calculateArea());
     }
 }

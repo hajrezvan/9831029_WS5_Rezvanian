@@ -11,10 +11,7 @@ public class Triangle extends Polygon {
         sides.add(side3);
     }
 
-    public ArrayList<Integer> getSides() {
-        return sides;
-    }
-
+    @Override
     public double calculatePerimeter() {
         double perimeter = 0;
         for (int r : sides) {
@@ -23,27 +20,25 @@ public class Triangle extends Polygon {
         return perimeter;
     }
 
+    @Override
     public double calculateArea() {
         int s = (sides.get(0) + sides.get(1) + sides.get(2)) / 2;
         return Math.sqrt((s * (s - sides.get(0)) * (s - sides.get(1)) * (s - sides.get(2))));
     }
 
+    @Override
     public void draw() {
         System.out.println("Triangle\n" +
                 "Its sides: " + sides);
     }
 
-    public boolean equals(String shape, ArrayList<Integer> sides) {
-        if (shape.equals("Triangle")) {
-            return this.sides == sides;
+    @Override
+    public boolean checkEquals(Object object) {
+        if (object.toString().equals(this.toString())) {
+            if (object instanceof Triangle) {
+                return this.sides == ((Triangle) object).getSides();
+            }
         }
         return false;
-    }
-
-    public void convertToString() {
-        System.out.println("Triangle:\n" +
-                "This sides: " + sides.toString() +
-                "\nThis perimeter: " + calculatePerimeter() +
-                "\nThis Area: " + calculateArea());
     }
 }
