@@ -13,32 +13,6 @@ public class Rectangle extends Polygon {
     }
 
     @Override
-    public double calculatePerimeter() {
-        double perimeter = 0;
-        for (int r : sides) {
-            perimeter += r;
-        }
-        return perimeter;
-    }
-
-    @Override
-    public double calculateArea() {
-        if (!sides.get(0).equals(sides.get(1))) {
-            return (sides.get(0) * sides.get(1));
-        } else if (!sides.get(2).equals(sides.get(0))) {
-            return (sides.get(0) * sides.get(2));
-        } else {
-            return (sides.get(0) * sides.get(3));
-        }
-    }
-
-    @Override
-    public void draw() {
-        System.out.println("Rectangle\n" +
-                "Its sides: " + sides);
-    }
-
-    @Override
     public boolean checkEquals(Object object) {
         if (object.toString().equals(this.toString())) {
             if (object instanceof Rectangle) {

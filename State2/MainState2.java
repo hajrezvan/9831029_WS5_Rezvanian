@@ -16,7 +16,6 @@ public class MainState2 {
         circle2 = tri3;
         tri3 = tri2;
         Shape rect3 = new Triangle(2, 3, 2);
-        System.out.println(rect3.toString());
 
         Paint shape = new Paint();
         shape.addShape(circle1);

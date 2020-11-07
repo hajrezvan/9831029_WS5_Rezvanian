@@ -12,27 +12,6 @@ public class Triangle extends Polygon {
     }
 
     @Override
-    public double calculatePerimeter() {
-        double perimeter = 0;
-        for (int r : sides) {
-            perimeter += r;
-        }
-        return perimeter;
-    }
-
-    @Override
-    public double calculateArea() {
-        int s = (sides.get(0) + sides.get(1) + sides.get(2)) / 2;
-        return Math.sqrt((s * (s - sides.get(0)) * (s - sides.get(1)) * (s - sides.get(2))));
-    }
-
-    @Override
-    public void draw() {
-        System.out.println("Triangle\n" +
-                "Its sides: " + sides);
-    }
-
-    @Override
     public boolean checkEquals(Object object) {
         if (object.toString().equals(this.toString())) {
             if (object instanceof Triangle) {

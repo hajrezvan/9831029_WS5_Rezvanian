@@ -16,14 +16,14 @@ public class Paint {
     public void drawAll() {
         for (Shape s :
                 shapes) {
-            s.draw();
+            s.draw(s);
         }
     }
 
     public void printAll() {
         for (Shape s :
                 shapes) {
-            s.convertToString(this);
+            s.convertToString(s);
             System.out.println();
         }
     }
