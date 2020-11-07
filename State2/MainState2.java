@@ -28,8 +28,7 @@ public class MainState2 {
         shape.addShape(tri3);
         shape.addShape(rect3);
 
-        Paint paint = new Paint();
-        paint.drawAll();
-        paint.printAll();
+        shape.drawAll();
+        shape.printAll();
     }
 }
